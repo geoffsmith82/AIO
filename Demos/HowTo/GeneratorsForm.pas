@@ -37,7 +37,7 @@ procedure TGeneratorsMainForm.ButtonEx1RunClick(Sender: TObject);
 type
   TInput = TList<Integer>;
 var
-  N, I: Integer;
+  N, I: UInt64;
   Gen: TGenerator<UInt64>;
   Fibonacci: TSymmetricArgsRoutine;
 begin
@@ -46,9 +46,9 @@ begin
   Fibonacci := procedure(const Args: array of const)
   var
     a, b, c: UInt64;
-    i, n: Integer;
+    i, n: UInt64;
   begin
-    n := Args[0].AsInteger;
+    n := Args[0].AsInt64;
     a := 0;
     b := 1;
     for i := 0 to n do
